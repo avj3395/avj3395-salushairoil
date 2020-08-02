@@ -8,8 +8,9 @@ header{
     top: 0;
     left: 0;
     padding: 0 100px;
-    background-color: lightgray;
+    background-color: darkgray;
     width: 100%;
+    height: 80px;
 
     
     box-sizing: border-box;
@@ -41,7 +42,7 @@ header nav ul li a:hover,
 header nav ul li a.active
 {
     color: #fff;
-    background: #2196f3;
+    background: gray;
     text-decoration: none;
     border-radius: 20px;
 }

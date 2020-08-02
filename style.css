@@ -39,14 +39,16 @@
 .linepara{
     padding-top: 10px;
     color: black;
-    
-    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    font-size: 19px;
 
 }
 .linepara2{
     color: black;
-    
-    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    font-size: 19px;
 }
 .instmanual{
   
@@ -136,7 +138,7 @@
     
   }
   .scrolldiv{
-    height: 600px;
+    height: 500px;
     overflow: auto;
   }
   .faqbutton{
@@ -189,7 +191,7 @@
     overflow: auto;
   }
   .faq{
-    padding-top: 130px;
+    padding-top: 120px;
     padding-left: 20px;
     padding-right: 20px;
   }
