@@ -144,7 +144,7 @@ function read_Data(){
 		
 		
 		<div class="pt-4">
-		<h6 >${userdata.user_name}</h6>
+		<h6 style="font-family: adventpro; font-weight: bold;">${userdata.user_name}</h6>
 		<div class="ratings_value" style="margin-top: -45px; margin-left: 140px">
         <span class="fa fa-star" id="str1" style="color: ${userdata.str1_value}"></span>
         <span class="fa fa-star" id="str2" style="color: ${userdata.str2_value}; margin-left: -40px "></span>
@@ -153,7 +153,7 @@ function read_Data(){
         <span class="fa fa-star" id="str5" style="color: ${userdata.str5_value}; margin-left: -40px "></span>
         <span id="rating-valuesss"></span>
 		</div> 
-		<p style="margin-top: -15px; margin-left: 25px" class="card-text">${userdata.user_msg}</p>
+		<p style="margin-top: -15px; margin-left: 25px; font-family: adventpro;" class="card-text">${userdata.user_msg}</p>
 		</div>
 		<br>
 		
