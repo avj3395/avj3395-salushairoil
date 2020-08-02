@@ -1,0 +1,218 @@
+@font-face{
+  font-family: adventpro;
+  src: url(AdventPro-Medium.ttf);
+}
+*{
+  font-family: adventpro;
+  letter-spacing: 1.5px;
+}
+@font-face{
+  font-family: prince;
+  src: url(PrincessSofia-Regular.ttf);
+}
+
+.homesection{
+  margin-top: 50px;
+  
+
+}
+
+
+.logo img{
+    width: 180px;
+    height: 100px;
+}
+
+.oilimg{
+    width: 270px;
+    height: 500px;
+    margin-left: 35px;
+    
+    
+}
+.logoimg{
+    width: 270px;
+    height: 150px;
+    margin-left: 30px;
+   
+}
+.linepara{
+    padding-top: 10px;
+    color: black;
+    
+    font-size: 18px;
+
+}
+.linepara2{
+    color: black;
+    
+    font-size: 18px;
+}
+.instmanual{
+  
+    color: black;
+    font-size: 18px;
+    
+
+    
+}
+.headerx{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    
+    color:black;
+  }
+  .fa-google {
+   
+    color:black;
+  }
+  .fa-instagram {
+    
+    color:black;
+  }
+  .socialmedia{
+      
+      padding-left: 50px;
+  }
+
+  .cardmiddle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+  }
+  .sm{
+    margin: 20px 0;
+  }
+  .sm a{
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    color: #2c3e50;
+    font-size: 18px;
+    transition: 0.4s;
+    border-radius: 50%
+  }
+  .sm a:hover{
+    background: #2c3e50;
+    color: white;
+  }
+  .faqbutton:link, .faqbutton:visited{
+
+    background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+
+  }
+
+  .faqbutton:hover, .faqbutton:active {
+    background-color: red;
+    
+  }
+  .scrolldiv{
+    height: 600px;
+    overflow: auto;
+  }
+  .faqbutton{
+    background-color: #4CAF50;
+     border: none;
+      color: white;
+       padding: 10px;
+       border-radius: 10px;
+       width: 150px;
+       text-align: center;
+  }
+  .instructionclass{
+    padding-top: 60px;
+     margin-top: 80px;
+      padding-bottom: 50px;
+       width: 100%;
+       background-size: cover;
+  }
+  .brandinfo{
+    padding-top: 60px;
+     padding-bottom: 50px;
+     background-size: cover;
+  }
+  .flipcards{
+    background-size: cover;
+  }
+
+  .checked{
+    color: orange;
+    
+  }
+  .heading {
+    font-size: 20px;
+    margin-right: 25px;
+  }
+
+  .rating-box .ratings .fa{
+    font-size: 20px;
+    color:#FF9800;
+    float: left;
+    cursor: pointer;
+  }
+  .cusname{
+    font-style: italic;
+   
+    font-size: medium;
+  }
+  .cusreview{
+    height: 350px;
+    overflow: auto;
+  }
+  .faq{
+    padding-top: 130px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .footerlist a{
+    text-decoration: none;
+    color: white;
+  }
+  .footerlist a:hover{
+    text-decoration: none;
+    color: gray;
+    
+  }
+
+  .adminlink{
+    color: white;
+    text-decoration: none;
+
+  }
+
+  .adminlink:hover{
+    color: lightgrey;
+    text-decoration: none;
+  }
+
+
+  

@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Salus hair care solution</title>
+    <link rel="icon" href="image/title_img.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="admin-style.css">   
+</head>
+    <body>
+    <div class="login-box">
+    <img src="image/avatar.png" class="avatar">
+        <h1>Admin</h1>
+            <form>
+            <p>Email</p>
+            <input type="text" id="username" placeholder="Enter Email">
+            <p>Password</p>
+            <input type="password" id="password" placeholder="Enter Password">
+            <button id="btn-login" type="button">Login</button> <br><br>
+            <a href="index.html">back to home</a>
+            </form>
+        
+        
+        </div>
+
+
+
+
+
+          <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCiW6Z-ZoIKrLnKk5Fei_AZjIpDpnb5Am4",
+    authDomain: "salus-hair-care-solution.firebaseapp.com",
+    databaseURL: "https://salus-hair-care-solution.firebaseio.com",
+    projectId: "salus-hair-care-solution",
+    storageBucket: "salus-hair-care-solution.appspot.com",
+    messagingSenderId: "657316963729",
+    appId: "1:657316963729:web:9ef46877c7aefa34652630",
+    measurementId: "G-9DDX9GWW2C"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+    <script src="adminlogin.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user){
+            if(user)
+            {
+                window.location.href = "admin-panel.html"
+            }
+        });
+    </script>
+    </body>
+</html>
