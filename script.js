@@ -1,146 +1,140 @@
 const db = firebase.database();
-const rootref = db.ref('rating');
+const rootref = db.ref("rating");
 
 var d = new Date();
 var t = d.getTime();
 var counter = t;
 
-	var str1 = "black";
-    var str2 = "black";
-    var str3 = "black";
-    var str4 = "black";
-    var str5 = "black";
+var str1 = "black";
+var str2 = "black";
+var str3 = "black";
+var str4 = "black";
+var str5 = "black";
 
- const stars=document.querySelector(".ratings").children;
- const ratingValue=document.querySelector("#rating-value");
-  let index;
-  let starvalue;
-  
-  for(let i=0; i<stars.length; i++){
-  	stars[i].addEventListener("mouseover",function(){
-  		 // console.log(i)
-  		 for(let j=0; j<stars.length; j++){
-  		 	stars[j].classList.remove("fa-star");		 	
-            stars[j].classList.add("fa-star-o");		 	
-  		 }
-  		 for(let j=0; j<=i; j++){
-  		 	stars[j].classList.remove("fa-star-o");		 	
-           stars[j].classList.add("fa-star");		 	
-  		 }
-  	})
-  	stars[i].addEventListener("click",function(){
-      ratingValue.value=i+1;
-	  index=i;
-	  starvalue=index;
-      console.log(starvalue);
-  	})
-  	stars[i].addEventListener("mouseout",function(){
-  		 
-  		 for(let j=0; j<stars.length; j++){
-  		 	stars[j].classList.remove("fa-star");		 	
-            stars[j].classList.add("fa-star-o");		 	
-  		 }
-  		 for(let j=0; j<=index; j++){
-  		 	stars[j].classList.remove("fa-star-o");		 	
-           stars[j].classList.add("fa-star");		 	
-  		 }
-  	})
-  }
+const stars = document.querySelector(".ratings").children;
+const ratingValue = document.querySelector("#rating-value");
+let index;
+let starvalue;
 
-
-  document.getElementById("form").addEventListener("submit",(e)=>{
-    var names = document.getElementById("name").value;
-    var msg = document.getElementById("message").value;
-    e.preventDefault();
-
-    createUser(names,msg,starvalue);
-    form.reset();
-
-});
-
-
-function createUser(inname,inmsg,strval){
-
-    
-    console.log(counter);
-    counter+=1;
-    console.log(counter);
-
-    switch(strval){
-        case 0:
-            str1 = "orange";
-            str2 = "black";
-            str3 = "black";
-            str4 = "black";
-            str5 = "black";
-            break;
-        case 1:
-            str1 = "orange";
-            str2 = "orange";
-            str3 = "black";
-            str4 = "black";
-            str5 = "black";
-            break;
-        case 2:
-            str1 = "orange";
-            str2 = "orange";
-            str3 = "orange";
-            str4 = "black";
-            str5 = "black";
-            break;
-        case 3:
-            str1 = "orange";
-            str2 = "orange";
-            str3 = "orange";
-            str4 = "orange";
-            str5 = "black";
-            break;
-        case 4:
-            str1 = "orange";
-            str2 = "orange";
-            str3 = "orange";
-            str4 = "orange";
-            str5 = "orange";
-            break;          
-
+for (let i = 0; i < stars.length; i++) {
+  stars[i].addEventListener("mouseover", function () {
+    // console.log(i)
+    for (let j = 0; j < stars.length; j++) {
+      stars[j].classList.remove("fa-star");
+      stars[j].classList.add("fa-star-o");
     }
-
-    console.log(str1);
-    console.log(str2);
-    console.log(str3);
-    console.log(str4);
-    console.log(str5);
-
-    rootref.child(counter).set({
-        user_name: inname,
-        user_msg: inmsg,
-        user_id: counter,
-        str1_value: str1,
-        str2_value: str2,
-        str3_value: str3,
-        str4_value: str4,
-        str5_value: str5
-    });
-
-    document.getElementById("customer_review").innerHTML='';
-    read_Data();
-    document.getElementById("cardsection").innerHTML='';
-    document.getElementById("cardsection2").innerHTML='';
-    read_contact();
-    var txt = "Thankyou for your Review.";
-    document.getElementById("rate_message").style.color = "green";
-    document.getElementById("rate_message").innerHTML = txt;
-    
+    for (let j = 0; j <= i; j++) {
+      stars[j].classList.remove("fa-star-o");
+      stars[j].classList.add("fa-star");
+    }
+  });
+  stars[i].addEventListener("click", function () {
+    ratingValue.value = i + 1;
+    index = i;
+    starvalue = index;
+    console.log(starvalue);
+  });
+  stars[i].addEventListener("mouseout", function () {
+    for (let j = 0; j < stars.length; j++) {
+      stars[j].classList.remove("fa-star");
+      stars[j].classList.add("fa-star-o");
+    }
+    for (let j = 0; j <= index; j++) {
+      stars[j].classList.remove("fa-star-o");
+      stars[j].classList.add("fa-star");
+    }
+  });
 }
 
-function read_Data(){
-	var data = firebase.database().ref("rating/");
-    data.on("child_added",function(data){
+document.getElementById("formdata").addEventListener("submit", (e) => {
+  e.preventDefault();
+  var names = document.getElementById("name").value;
+  var msg = document.getElementById("message").value;
 
-        var userdata = data.val();
-        console.log(userdata);
-    
-		document.getElementById("customer_review").innerHTML+=`
+  createUser(names, msg, starvalue);
+});
+
+function createUser(inname, inmsg, strval) {
+  // console.log(counter);
+  counter += 1;
+  // console.log(counter);
+
+  document.getElementById("formdata").reset();
+  document.getElementById("button1").style.display="none"
+  var txt = "Thankyou for your Review.";
+  document.getElementById("rate_message").style.color = "green";
+  document.getElementById("rate_message").innerHTML = txt;
+  
+
+  switch (strval) {
+    case 0:
+      str1 = "orange";
+      str2 = "black";
+      str3 = "black";
+      str4 = "black";
+      str5 = "black";
+      break;
+    case 1:
+      str1 = "orange";
+      str2 = "orange";
+      str3 = "black";
+      str4 = "black";
+      str5 = "black";
+      break;
+    case 2:
+      str1 = "orange";
+      str2 = "orange";
+      str3 = "orange";
+      str4 = "black";
+      str5 = "black";
+      break;
+    case 3:
+      str1 = "orange";
+      str2 = "orange";
+      str3 = "orange";
+      str4 = "orange";
+      str5 = "black";
+      break;
+    case 4:
+      str1 = "orange";
+      str2 = "orange";
+      str3 = "orange";
+      str4 = "orange";
+      str5 = "orange";
+      break;
+  }
+
+  //   console.log(str1);
+  //   console.log(str2);
+  //   console.log(str3);
+  //   console.log(str4);
+  //   console.log(str5);
+
+  rootref.child(counter).set({
+    user_name: inname,
+    user_msg: inmsg,
+    user_id: counter,
+    str1_value: str1,
+    str2_value: str2,
+    str3_value: str3,
+    str4_value: str4,
+    str5_value: str5,
+  });
+
+  document.getElementById("customer_review").innerHTML = "";
+  read_Data();
+  document.getElementById("cardsection").innerHTML = "";
+  document.getElementById("cardsection2").innerHTML = "";
+  read_contact();
+}
+
+function read_Data() {
+  var data = firebase.database().ref("rating/");
+  data.on("child_added", function (data) {
+    var userdata = data.val();
+    // console.log(userdata);
+
+    document.getElementById("customer_review").innerHTML += `
 		
 		
 		<div class="pt-4">
@@ -158,18 +152,15 @@ function read_Data(){
 		<br>
 		
 		`;
-    });
-    
-    
+  });
 }
 
-function read_contact(){
-    var data = firebase.database().ref("contact/");
-    data.on("child_added",function(data){
-
-        var userdata = data.val();
-        console.log(userdata);
-        document.getElementById("cardsection").innerHTML+=`
+function read_contact() {
+  var data = firebase.database().ref("contact/");
+  data.on("child_added", function (data) {
+    var userdata = data.val();
+    console.log(userdata);
+    document.getElementById("cardsection").innerHTML += `
         <div class="card mb-3">
         <div class="card-body">
         <h5  class="card-title">${userdata.user_name}</h5>
@@ -179,14 +170,13 @@ function read_contact(){
         </div>
 
         `;
-    });
+  });
 
-    var data1 = firebase.database().ref("rating/");
-    data1.on("child_added",function(data1){
-
-        var userdata = data1.val();
-        console.log(userdata);
-        document.getElementById("cardsection2").innerHTML+=`
+  var data1 = firebase.database().ref("rating/");
+  data1.on("child_added", function (data1) {
+    var userdata = data1.val();
+    console.log(userdata);
+    document.getElementById("cardsection2").innerHTML += `
         <div class="card mb-3">
         <div class="card-body">
         <h5  class="card-title">${userdata.user_name}</h5>
@@ -196,16 +186,11 @@ function read_contact(){
         </div>
 
         `;
-    });
+  });
 }
 
-function delete_data(userid){
-
-    rootref.child(userid).remove();
-    document.getElementById("cardsection2").innerHTML='';
-    read_contact();
-    
+function delete_data(userid) {
+  rootref.child(userid).remove();
+  document.getElementById("cardsection2").innerHTML = "";
+  read_contact();
 }
-
-
-
